@@ -1,21 +1,17 @@
 Name:           perl-BSON
-Version:        1.2.2
-Release:        3%{?dist}
+Version:        1.4.0
+Release:        1%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
-Group:          Development/Libraries
 URL:            http://search.cpan.org/dist/BSON/
 Source0:        http://www.cpan.org/authors/id/M/MO/MONGODB/BSON-v%{version}.tar.gz
-# Fix constructing BSON::Time objects on 32-bit perl, bug #1401448,
-# <https://jira.mongodb.org/browse/PERL-694>
-Patch0:         BSON-v1.2.2-Do-not-produce-Math-BigFloat-by-BSON-Time.patch
 BuildArch:      noarch
 BuildRequires:  findutils
 BuildRequires:  make
 BuildRequires:  perl
 BuildRequires:  perl-generators
-BuildRequires:  perl(:VERSION) >= 5.8.1
-BuildRequires:  perl(ExtUtils::MakeMaker) >= 6.17
+BuildRequires:  perl(:VERSION) >= 5.10.1
+BuildRequires:  perl(ExtUtils::MakeMaker) >= 6.76
 BuildRequires:  perl(strict)
 BuildRequires:  perl(warnings)
 # Run-time:
@@ -86,15 +82,13 @@ versa in accordance with the BSON specification <http://bsonspec.org/>.
 
 %prep
 %setup -q -n BSON-v%{version}
-%patch0 -p1
 
 %build
-perl Makefile.PL INSTALLDIRS=vendor
+perl Makefile.PL INSTALLDIRS=vendor NO_PACKLIST=1
 make %{?_smp_mflags}
 
 %install
 make pure_install DESTDIR=$RPM_BUILD_ROOT
-find $RPM_BUILD_ROOT -type f -name .packlist -delete
 %{_fixperms} $RPM_BUILD_ROOT/*
 
 %check
@@ -108,6 +102,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Fri Mar 17 2017 Petr Pisar <ppisar@redhat.com> - 1.4.0-1
+- 1.4.0 bump
+
 * Fri Feb 24 2017 Petr Pisar <ppisar@redhat.com> - 1.2.2-3
 - Fix constructing BSON::Time objects on 32-bit perl (bug #1401448)
 
