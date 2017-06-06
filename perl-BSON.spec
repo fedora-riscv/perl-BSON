@@ -1,6 +1,6 @@
 Name:           perl-BSON
 Version:        1.4.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
 URL:            http://search.cpan.org/dist/BSON/
@@ -102,6 +102,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Tue Jun 06 2017 Jitka Plesnikova <jplesnik@redhat.com> - 1.4.0-2
+- Perl 5.26 rebuild
+
 * Fri Mar 17 2017 Petr Pisar <ppisar@redhat.com> - 1.4.0-1
 - 1.4.0 bump
 
