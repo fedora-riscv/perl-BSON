@@ -8,7 +8,7 @@ Source0:        http://www.cpan.org/authors/id/M/MO/MONGODB/BSON-v%{version}.tar
 BuildArch:      noarch
 BuildRequires:  findutils
 BuildRequires:  make
-BuildRequires:  perl
+BuildRequires:  perl-interpreter
 BuildRequires:  perl-generators
 BuildRequires:  perl(:VERSION) >= 5.10.1
 BuildRequires:  perl(ExtUtils::MakeMaker) >= 6.76
