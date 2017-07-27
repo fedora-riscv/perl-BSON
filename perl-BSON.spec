@@ -1,6 +1,6 @@
 Name:           perl-BSON
 Version:        1.4.0
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
 URL:            http://search.cpan.org/dist/BSON/
@@ -102,6 +102,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Thu Jul 27 2017 Fedora Release Engineering <releng@fedoraproject.org> - 1.4.0-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_27_Mass_Rebuild
+
 * Wed Jun 07 2017 Jitka Plesnikova <jplesnik@redhat.com> - 1.4.0-3
 - Perl 5.26 re-rebuild of bootstrapped packages
 
