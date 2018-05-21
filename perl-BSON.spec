@@ -1,5 +1,5 @@
 Name:           perl-BSON
-Version:        1.6.0
+Version:        1.6.1
 Release:        1%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
@@ -26,11 +26,13 @@ BuildRequires:  perl(DateTime::Tiny)
 BuildRequires:  perl(Digest::MD5)
 BuildRequires:  perl(Exporter)
 BuildRequires:  perl(if)
+BuildRequires:  perl(List::Util)
 # Mango::BSON::Time not yet packaged
 # Math::BigFloat not used because our perl has use64bitint=1
 BuildRequires:  perl(Math::BigInt)
 BuildRequires:  perl(MIME::Base64)
 BuildRequires:  perl(Moo) >= 2.002004
+BuildRequires:  perl(mro)
 BuildRequires:  perl(namespace::clean)
 BuildRequires:  perl(overload)
 BuildRequires:  perl(re)
@@ -44,6 +46,7 @@ BuildRequires:  perl(Time::Moment)
 BuildRequires:  perl(version)
 # Tests:
 BuildRequires:  perl(Data::Dumper)
+BuildRequires:  perl(Devel::Peek)
 BuildRequires:  perl(File::Spec)
 BuildRequires:  perl(JSON::MaybeXS)
 BuildRequires:  perl(lib)
@@ -102,6 +105,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Mon May 21 2018 Jitka Plesnikova <jplesnik@redhat.com> - 1.6.1-1
+- 1.6.1 bump
+
 * Wed May 16 2018 Jitka Plesnikova <jplesnik@redhat.com> - 1.6.0-1
 - 1.6.0 bump
 
