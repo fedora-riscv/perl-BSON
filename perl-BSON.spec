@@ -1,10 +1,10 @@
 Name:           perl-BSON
-Version:        1.6.1
+Version:        1.6.2
 Release:        1%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
-URL:            http://search.cpan.org/dist/BSON/
-Source0:        http://www.cpan.org/authors/id/M/MO/MONGODB/BSON-v%{version}.tar.gz
+URL:            https://metacpan.org/release/BSON
+Source0:        https://cpan.metacpan.org/authors/id/M/MO/MONGODB/BSON-v%{version}.tar.gz
 BuildArch:      noarch
 BuildRequires:  findutils
 BuildRequires:  make
@@ -105,6 +105,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Fri May 25 2018 Petr Pisar <ppisar@redhat.com> - 1.6.2-1
+- 1.6.2 bump
+
 * Mon May 21 2018 Jitka Plesnikova <jplesnik@redhat.com> - 1.6.1-1
 - 1.6.1 bump
 
