@@ -1,5 +1,5 @@
 Name:           perl-BSON
-Version:        1.6.2
+Version:        1.6.3
 Release:        1%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
@@ -105,6 +105,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Mon May 28 2018 Petr Pisar <ppisar@redhat.com> - 1.6.3-1
+- 1.6.3 bump
+
 * Fri May 25 2018 Petr Pisar <ppisar@redhat.com> - 1.6.2-1
 - 1.6.2 bump
 
