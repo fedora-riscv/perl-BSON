@@ -1,5 +1,8 @@
+# Run optional tests
+%bcond_without perl_BSON_enables_optional_test
+
 Name:           perl-BSON
-Version:        1.6.3
+Version:        1.6.4
 Release:        1%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
@@ -55,6 +58,7 @@ BuildRequires:  perl(Test::Deep)
 BuildRequires:  perl(Test::More) >= 0.96
 # threads not used
 BuildRequires:  perl(utf8)
+%if %{with perl_BSON_enables_optional_test}
 # Optional tests:
 BuildRequires:  perl(Math::Int64)
 %if !%{defined perl_bootstrap}
@@ -67,6 +71,8 @@ BuildRequires:  perl(MongoDB::Code)
 BuildRequires:  perl(MongoDB::DBRef) >= 1.0.0
 BuildRequires:  perl(MongoDB::OID)
 BuildRequires:  perl(MongoDB::Timestamp)
+%endif
+BuildRequires:  perl(Test::Exception)
 %endif
 Requires:       perl(:MODULE_COMPAT_%(eval "`perl -V:version`"; echo $version))
 Requires:       perl(DateTime)
@@ -105,6 +111,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Thu Jun 14 2018 Petr Pisar <ppisar@redhat.com> - 1.6.4-1
+- 1.6.4 bump
+
 * Mon May 28 2018 Petr Pisar <ppisar@redhat.com> - 1.6.3-1
 - 1.6.3 bump
 
