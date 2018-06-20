@@ -2,7 +2,7 @@
 %bcond_without perl_BSON_enables_optional_test
 
 Name:           perl-BSON
-Version:        1.6.4
+Version:        1.6.5
 Release:        1%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
@@ -111,6 +111,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Wed Jun 20 2018 Petr Pisar <ppisar@redhat.com> - 1.6.5-1
+- 1.6.5 bump
+
 * Thu Jun 14 2018 Petr Pisar <ppisar@redhat.com> - 1.6.4-1
 - 1.6.4 bump
 
