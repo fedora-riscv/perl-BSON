@@ -3,7 +3,7 @@
 
 Name:           perl-BSON
 Version:        1.6.6
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
 URL:            https://metacpan.org/release/BSON
@@ -111,6 +111,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Fri Jun 29 2018 Jitka Plesnikova <jplesnik@redhat.com> - 1.6.6-3
+- Perl 5.28 rebuild
+
 * Fri Jun 29 2018 Petr Pisar <ppisar@redhat.com> - 1.6.6-2
 - Adapt to changes in MongoDB-v2.0.0
 
