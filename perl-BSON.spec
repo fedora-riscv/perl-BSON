@@ -2,8 +2,8 @@
 %bcond_without perl_BSON_enables_optional_test
 
 Name:           perl-BSON
-Version:        1.6.6
-Release:        4%{?dist}
+Version:        1.6.7
+Release:        1%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
 URL:            https://metacpan.org/release/BSON
@@ -64,7 +64,6 @@ BuildRequires:  perl(Math::Int64)
 %if !%{defined perl_bootstrap}
 # Build cycle: perl-MongoDB → perl-BSON
 BuildRequires:  perl(MongoDB)
-# MongoDB::BSON::_EncodedDoc removed from MongoDB-v2.0.0
 BuildRequires:  perl(MongoDB::BSON::Binary)
 BuildRequires:  perl(MongoDB::BSON::Regexp)
 BuildRequires:  perl(MongoDB::Code)
@@ -111,6 +110,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Wed Jul 11 2018 Petr Pisar <ppisar@redhat.com> - 1.6.7-1
+- 1.6.7 bump
+
 * Sat Jun 30 2018 Jitka Plesnikova <jplesnik@redhat.com> - 1.6.6-4
 - Perl 5.28 re-rebuild of bootstrapped packages
 
