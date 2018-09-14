@@ -2,8 +2,8 @@
 %bcond_without perl_BSON_enables_optional_test
 
 Name:           perl-BSON
-Version:        1.6.7
-Release:        2%{?dist}
+Version:        1.8.0
+Release:        1%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
 URL:            https://metacpan.org/release/BSON
@@ -52,9 +52,11 @@ BuildRequires:  perl(Data::Dumper)
 BuildRequires:  perl(Devel::Peek)
 BuildRequires:  perl(File::Spec)
 BuildRequires:  perl(JSON::MaybeXS)
+BuildRequires:  perl(JSON::PP) >= 2.97001
 BuildRequires:  perl(lib)
 BuildRequires:  perl(Path::Tiny) >= 0.054
 BuildRequires:  perl(Test::Deep)
+BuildRequires:  perl(Test::Fatal)
 BuildRequires:  perl(Test::More) >= 0.96
 # threads not used
 BuildRequires:  perl(utf8)
@@ -110,6 +112,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Fri Sep 14 2018 Petr Pisar <ppisar@redhat.com> - 1.8.0-1
+- 1.8.0 bump
+
 * Fri Jul 13 2018 Fedora Release Engineering <releng@fedoraproject.org> - 1.6.7-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_29_Mass_Rebuild
 
