@@ -2,7 +2,7 @@
 %bcond_without perl_BSON_enables_optional_test
 
 Name:           perl-BSON
-Version:        1.8.1
+Version:        1.10.1
 Release:        1%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
@@ -24,9 +24,9 @@ BuildRequires:  perl(boolean) >= 0.45
 BuildRequires:  perl(Carp)
 BuildRequires:  perl(Config)
 BuildRequires:  perl(constant)
+BuildRequires:  perl(Crypt::URandom)
 BuildRequires:  perl(DateTime)
 BuildRequires:  perl(DateTime::Tiny)
-BuildRequires:  perl(Digest::MD5)
 BuildRequires:  perl(Exporter)
 BuildRequires:  perl(if)
 BuildRequires:  perl(List::Util)
@@ -102,6 +102,9 @@ make pure_install DESTDIR=$RPM_BUILD_ROOT
 %{_fixperms} $RPM_BUILD_ROOT/*
 
 %check
+unset AUTHOR_TESTING AUTOMATED_TESTING BSON_EXTJSON BSON_EXTJSON_RELAXED \
+    BSON_TEST_SORT_HASH HARNESS_PERL_SWITCHES PERL_BSON_BACKEND \
+    PERL_MONGO_NO_DEP_WARNINGS
 make test
 
 %files
@@ -112,6 +115,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Fri Nov 30 2018 Petr Pisar <ppisar@redhat.com> - 1.10.1-1
+- 1.10.1 bump
+
 * Wed Oct 03 2018 Jitka Plesnikova <jplesnik@redhat.com> - 1.8.1-1
 - 1.8.1 bump
 
