@@ -2,8 +2,8 @@
 %bcond_without perl_BSON_enables_optional_test
 
 Name:           perl-BSON
-Version:        1.10.2
-Release:        2%{?dist}
+Version:        1.12.0
+Release:        1%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
 URL:            https://metacpan.org/release/BSON
@@ -94,11 +94,11 @@ versa in accordance with the BSON specification <http://bsonspec.org/>.
 %setup -q -n BSON-v%{version}
 
 %build
-perl Makefile.PL INSTALLDIRS=vendor NO_PACKLIST=1
-make %{?_smp_mflags}
+perl Makefile.PL INSTALLDIRS=vendor NO_PACKLIST=1 NO_PERLLOCAL=1
+%{make_build}
 
 %install
-make pure_install DESTDIR=$RPM_BUILD_ROOT
+%{make_install}
 %{_fixperms} $RPM_BUILD_ROOT/*
 
 %check
@@ -115,6 +115,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Mon Jul 15 2019 Petr Pisar <ppisar@redhat.com> - 1.12.0-1
+- 1.12.0 bump
+
 * Fri Feb 01 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.10.2-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
