@@ -2,8 +2,8 @@
 %bcond_without perl_BSON_enables_optional_test
 
 Name:           perl-BSON
-Version:        1.12.0
-Release:        2%{?dist}
+Version:        1.12.1
+Release:        1%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
 URL:            https://metacpan.org/release/BSON
@@ -11,8 +11,8 @@ Source0:        https://cpan.metacpan.org/authors/id/M/MO/MONGODB/BSON-v%{versio
 BuildArch:      noarch
 BuildRequires:  findutils
 BuildRequires:  make
-BuildRequires:  perl-interpreter
 BuildRequires:  perl-generators
+BuildRequires:  perl-interpreter
 BuildRequires:  perl(:VERSION) >= 5.10.1
 BuildRequires:  perl(ExtUtils::MakeMaker) >= 6.76
 BuildRequires:  perl(strict)
@@ -90,6 +90,8 @@ This Perl class implements a BSON encoder and decoder. It consumes
 documents (typically hash references) and emits BSON strings and vice
 versa in accordance with the BSON specification <http://bsonspec.org/>.
 
+Upstream claims it will stop supporting this code on 2020-08-13.
+
 %prep
 %setup -q -n BSON-v%{version}
 
@@ -115,6 +117,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Wed Aug 14 2019 Petr Pisar <ppisar@redhat.com> - 1.12.1-1
+- 1.12.1 bump
+
 * Fri Jul 26 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.12.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
