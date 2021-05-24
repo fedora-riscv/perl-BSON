@@ -3,7 +3,7 @@
 
 Name:           perl-BSON
 Version:        1.12.2
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
 URL:            https://metacpan.org/release/BSON
@@ -118,6 +118,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Mon May 24 2021 Jitka Plesnikova <jplesnik@redhat.com> - 1.12.2-4
+- Perl 5.34 re-rebuild of bootstrapped packages
+
 * Sun May 23 2021 Jitka Plesnikova <jplesnik@redhat.com> - 1.12.2-3
 - Perl 5.34 rebuild
 
