@@ -3,7 +3,7 @@
 
 Name:           perl-BSON
 Version:        1.12.2
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
 URL:            https://metacpan.org/release/BSON
@@ -118,6 +118,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Wed Jun 01 2022 Jitka Plesnikova <jplesnik@redhat.com> - 1.12.2-7
+- Perl 5.36 rebuild
+
 * Thu Jan 20 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.12.2-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
 
