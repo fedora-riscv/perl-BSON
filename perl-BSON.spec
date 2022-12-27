@@ -1,3 +1,4 @@
+%global perl_bootstrap 1
 # the tests failed on riscv64, disable it by default
 %bcond_with tests
 # Run optional tests
@@ -5,7 +6,7 @@
 
 Name:           perl-BSON
 Version:        1.12.2
-Release:        9.rv64%{?dist}
+Release:        9.rv64~bootstrap%{?dist}
 Summary:        BSON serialization and deserialization
 License:        ASL 2.0
 URL:            https://metacpan.org/release/BSON
@@ -122,6 +123,9 @@ make test
 %{_mandir}/man3/*
 
 %changelog
+* Tue Dec 27 2022 Liu Yang <Yang.Liu.sn@gmail.com> - 1.12.2-9.rv64~bootstrap
+- Enable boostrap for riscv64 perl 5.36 upgrade.
+
 * Tue Dec 27 2022 Liu Yang <Yang.Liu.sn@gmail.com> - 1.12.2-9.rv64
 - Disable tests by default for riscv64 failure.
 
